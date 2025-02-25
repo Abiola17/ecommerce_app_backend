@@ -1,13 +1,13 @@
 import 'package:e_commerce_app/common/widgets/appbar/appbar.dart';
 import 'package:e_commerce_app/common/widgets/images/t_circular_image.dart';
 import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
+import 'package:e_commerce_app/features/personalization/screens/controllers/controllers/user_controller.dart';
+import 'package:e_commerce_app/features/personalization/screens/profile/widgets/change_name.dart';
 import 'package:e_commerce_app/features/personalization/screens/profile/widgets/profile_menu.dart';
-import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -15,6 +15,7 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.instance;
     return Scaffold(
       appBar: const TAppBar(showBackArrow: true, title: Text('Profile')),
       body: SingleChildScrollView(
@@ -26,22 +27,28 @@ class ProfileScreen extends StatelessWidget {
                 width: double.infinity,
                 child: Column(
                   children: [
-                    const TCircularImage(image: TImages.user, width: 50, height: 50),
-                    TextButton(onPressed: (){}, child: const Text('Change Profile Picture'))
+                    const TCircularImage(
+                        image: TImages.user, width: 50, height: 50),
+                    TextButton(
+                        onPressed: () {},
+                        child: const Text('Change Profile Picture'))
                   ],
                 ),
               ),
               const SizedBox(height: TSizes.spaceBtwItems / 2),
               const Divider(),
               const SizedBox(height: TSizes.spaceBtwItems),
-              const TSectionHeading(title: 'Profile Information', showActionButton: false),
+              const TSectionHeading(
+                  title: 'Profile Information', showActionButton: false),
               const SizedBox(height: TSizes.spaceBtwItems),
-
-              TProfileMenu(onPressed: (){}, title: 'Name', value: 'Oluwasegun Adekunle'),
+              TProfileMenu(
+                  onPressed: () => Get.to(() => const ChangeName()),
+                  title: 'Name',
+                  value: controller.user.value.fullName),
               TProfileMenu(
                 onPressed: () {},
                 title: 'Username',
-                value: 'SilverNig',
+                value: controller.user.value.username,
               ),
               const SizedBox(
                 height: TSizes.spaceBtwItems,
@@ -57,23 +64,23 @@ class ProfileScreen extends StatelessWidget {
               TProfileMenu(
                 onPressed: () {},
                 title: 'User ID',
-                value: '80123',
+                value: controller.user.value.id,
                 icon: Iconsax.copy,
               ),
               TProfileMenu(
                 onPressed: () {},
                 title: 'E-mail',
-                value: 'josephsegun696@gmail.com',
+                value: controller.user.value.email,
               ),
               TProfileMenu(
                 onPressed: () {},
                 title: 'Phone Number',
-                value: '+234 915 59896 33',
+                value: controller.user.value.phoneNumber,
               ),
               TProfileMenu(
                 onPressed: () {},
                 title: 'Gender',
-                value: 'male',
+                value: 'Male',
               ),
               TProfileMenu(
                 onPressed: () {},
@@ -84,16 +91,13 @@ class ProfileScreen extends StatelessWidget {
               const SizedBox(
                 height: TSizes.spaceBtwItems,
               ),
-
               TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    'Close Account',
-                    style: TextStyle(color: Colors.red),
-                  ),
+                onPressed: () => controller.deleteAccountWarningPopup(),
+                child: const Text(
+                  'Close Account',
+                  style: TextStyle(color: Colors.red),
+                ),
               )
-
-
             ],
           ),
         ),

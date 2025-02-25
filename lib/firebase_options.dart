@@ -64,13 +64,13 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBNiIZGkcTlcicvBUihXvT7vHuBDA2FlgA',
-    appId: '1:132744063764:ios:768fc9f61821d28dd27001',
-    messagingSenderId: '132744063764',
-    projectId: 'ecommerceapp-55501',
-    storageBucket: 'ecommerceapp-55501.firebasestorage.app',
-    androidClientId: '132744063764-rgv01it8fo1no5iic4jh2vdnvbodq7fk.apps.googleusercontent.com',
-    iosClientId: '132744063764-19gi2j6vopdqqvov2lo73r5c6t80bt1k.apps.googleusercontent.com',
+    apiKey: 'AIzaSyCo8KV3JiKQlVcnS4i22SCDCHQCY_vL30U',
+    appId: '1:918877349064:ios:14eb4a36c6a97c03ac31fd',
+    messagingSenderId: '918877349064',
+    projectId: 'ecommerceapp-541d3',
+    storageBucket: 'ecommerceapp-541d3.firebasestorage.app',
+    androidClientId: '918877349064-j8tdaolm0dguhu0e6kp7mn10f8mvhs8i.apps.googleusercontent.com',
+    iosClientId: '918877349064-j8tdaolm0dguhu0e6kp7mn10f8mvhs8i.apps.googleusercontent.com',
     iosBundleId: 'com.example.eCommerceApp',
   );
 

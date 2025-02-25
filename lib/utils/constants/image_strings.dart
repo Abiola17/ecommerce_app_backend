@@ -119,6 +119,10 @@ class TImages{
   static const String productImage76 = "assets/images/products/slipper-product-3.png";
   static const String productImage77= "assets/images/products/slipper-product.png";
 
+  //Json Animations
+  static const String docerAnimation = "assets/images/animations/141594-animation-of-docer.json";
+  static const String successfulRegisterationAnimation = "assets/images/animations/72462-check-register.json";
+
 
   // -- Product Reviews
   static const String userProfileImage1 = "assets/images/reviews/review_profile_image_1.jpg";
